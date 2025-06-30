@@ -1,10 +1,11 @@
 import { UpperCasePipe } from '@angular/common';
-import { Component, signal, computed } from '@angular/core';
+import { Component, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'hero-computed-page',
     templateUrl: './hero-computed-page.compontent.html',
     imports: [UpperCasePipe],
+    // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class HeroCoputedPageComponent {
