@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 import { HeroPageComponent } from './hero/hero-page.component';
-import { AppComponent } from './app.component';
 import { HeroCoputedPageComponent } from './hero-computed/hero-computed-page.component';
+import { CounterComponent } from './counter/counter.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: AppComponent
+        component: CounterComponent
     },
     {
         path: 'hero',
@@ -15,5 +15,9 @@ export const routes: Routes = [
     {
         path: 'hero-computed',
         component: HeroCoputedPageComponent
+    },
+    {
+        path: '**',
+        redirectTo: '',
     }
 ];

@@ -2,7 +2,8 @@ import { Component, OnInit, signal } from '@angular/core';
 
 @Component({
     selector: 'hero-page',
-    templateUrl: './hero-page.component.html'
+    templateUrl: './hero-page.component.html',
+    // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class HeroPageComponent {
