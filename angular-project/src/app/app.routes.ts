@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
-import { HeroPageComponent } from './hero/hero-page.component';
-import { HeroCoputedPageComponent } from './hero-computed/hero-computed-page.component';
-import { CounterComponent } from './counter/counter.component';
+import { HeroPageComponent } from './pages/hero/hero-page.component';
+import { HeroCoputedPageComponent } from './pages/hero-computed/hero-computed-page.component';
+import { CounterComponent } from './pages/counter/counter.component';
+import { DragonballComponent } from './pages/dragonball/dragonball-page.component';
 
 export const routes: Routes = [
     {
@@ -15,6 +16,10 @@ export const routes: Routes = [
     {
         path: 'hero-computed',
         component: HeroCoputedPageComponent
+    },
+    {
+        path: 'dragonball',
+        component: DragonballComponent
     },
     {
         path: '**',
