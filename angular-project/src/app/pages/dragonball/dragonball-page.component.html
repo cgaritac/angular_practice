@@ -15,11 +15,24 @@
     <div class="col-12 col-sm-6">
         <h3>Listado</h3>
         <ol>
-            <li>Goku</li>
-            <li>Goku</li>
-            <li>Goku</li>
-            <li>Goku</li>
-            <li>Goku</li>
+            @for (character of characters(); track character.id) { <!-- No se recomienda usar el index para el track -->
+            <li>
+                <span>{{ character.name }}</span>
+                <strong class="text-danger"> ({{ character.power }})</strong>
+            </li>
+            }
         </ol>
+    </div>
+
+    <div class="col-12 col-sm-6">
+        <h3>Listado no ordenado</h3>
+        <ul>
+            @for (character of characters(); track character.id; let idx = $index) { <!-- No se recomienda usar el index para el track -->
+            <li>
+                <span>{{idx + 1}} - {{ character.name }}</span>
+                <strong class="text-danger"> ({{ character.power }})</strong>
+            </li>
+            }
+        </ul>
     </div>
 </section>
