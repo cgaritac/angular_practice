@@ -30,7 +30,12 @@
             @for (character of characters(); track character.id; let idx = $index) { <!-- No se recomienda usar el index para el track -->
             <li>
                 <span>{{idx + 1}} - {{ character.name }}</span>
-                <strong class="text-danger"> ({{ character.power }})</strong>
+                <strong 
+                    [class.text-danger]="character.power > 8000"
+                    [class.text-primary]="character.power < 8000"
+                > 
+                    ({{ character.power }})
+                </strong>
             </li>
             }
         </ul>
