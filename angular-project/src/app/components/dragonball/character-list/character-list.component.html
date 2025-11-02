@@ -1,0 +1,33 @@
+<div>
+  <h3>Listado</h3>
+  <ol>
+    @for (character of characters(); track character.id) {
+    <!-- No se recomienda usar el index para el track -->
+    <li>
+      <span>{{ character.name }}</span>
+      <strong class="text-danger"> ({{ character.power }})</strong>
+    </li>
+    }
+  </ol>
+</div>
+
+<div class="col-12 col-sm-6">
+  <h3>Listado no ordenado de fuertes</h3>
+  <ul>
+    @for (character of characters(); track character.id; let idx = $index) {
+    <!-- No se recomienda usar el index para el track -->
+    @if(character.power > 500){
+    <li>
+      <span>{{idx + 1}} - {{ character.name }}</span>
+      <strong
+        [class.text-danger]="character.power > 8000"
+        [class.text-primary]="character.power < 8000"
+      >
+        ({{ character.power }})
+      </strong>
+    </li>
+    }@else {
+    <li><strong>Peleador de bajo nivel</strong></li>
+    } }
+  </ul>
+</div>
